@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  mensajeBienvenida:String="¡Bienvenidos"
+  mensaje2:String="Es un placer tenerlos dia a dia"
+
 }
