@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ServiciosComponent {
 
+  bgPropertyValid:boolean=true;
+  onSaludar():void{
+    alert("Hola a todos!!!");
+  }
 }
