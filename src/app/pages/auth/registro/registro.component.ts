@@ -1,12 +1,59 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { User } from '../../../models/user';
+import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+//ver si hace falta esto q no estaba
+import { HttpClientModule } from '@angular/common/http';
+HttpClientModule
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
+  form:FormGroup;
+  usuario: User = new User();
+
+  constructor(private formBuilder: FormBuilder, private authService:AuthService , private router: Router) {
+    this.form= this.formBuilder.group(
+      {
+        nombre:['', [Validators.required]] ,
+        apellido:['', [Validators.required]],
+        dni:['', [Validators.required]],
+        fechaNacimiento:['', [Validators.required]],
+        password1:['',[Validators.required]],
+        password2:['',[Validators.required]],
+        email:['', [Validators.required, Validators.email]]
+      }
+    )
+  }
+
+  onEnviar(event: Event): void {
+    event.preventDefault;
+    if (this.form.valid)
+    {
+      console.log("Enviando  al servidor...");
+
+      this.authService.createUser(this.form.value as User).subscribe(
+        data => {
+          console.log(data.id);
+          console.log( this.form.value as User)
+            if (data.id>0)
+            {
+              alert("El registro ha sido creado satisfactoriamente. A continuación, por favor Inicie Sesión.");
+              this.router.navigate(['/iniciar-sesion'])
+            }
+        })
+    }
+    else
+    {
+      this.form.markAllAsTouched();
+    }
+  }
 
 }

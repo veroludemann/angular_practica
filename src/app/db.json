@@ -1,0 +1,58 @@
+{
+  "profesionals": [
+    {
+      "id": "1",
+      "perfil": "Desarrollador Web",
+      "name": "Veronica Ludemann",
+      "photo": "assets/team/vero.webp",
+      "githubLink": "https://github.com/veroludemann",
+      "linkedinLink": "https://linkedin.com/in/veronica-ludemann"
+    },
+    {
+      "id": "2",
+      "perfil": "Desarrollador Web",
+      "name": "Diego Guzman",
+      "photo": "assets/team/die.webp",
+      "githubLink": "https://github.com/cerveux",
+      "linkedinLink": "https://www.linkedin.com/in/diego-guzm%C3%A1n-cerveux/"
+    },
+    {
+      "id": "3",
+      "perfil": "Desarrollador Web",
+      "name": "Nicolas Luna",
+      "photo": "assets/team/nico.webp",
+      "githubLink": "https://github.com/NicolasLuna12",
+      "linkedinLink": "https://www.linkedin.com/in/nicolas-luna-632612106/"
+    },
+    {
+      "id": "e5a3"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { IniciarSesionComponent } from './pages/auth/iniciar-sesion/iniciar-sesion.component';
-import { RegistroComponent } from './pages/auth/registro/registro.component';
+
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -10,13 +10,15 @@ import { ProfesionalComponent } from './pages/quienes-somos/profesional/profesio
 import { OperacionesComponent } from './pages/dashboard/operaciones/operaciones.component';
 import { TransaccionesComponent } from './pages/dashboard/transacciones/transacciones.component';
 import { CriptomonedasComponent } from './pages/dashboard/criptomonedas/criptomonedas.component';
-
+import { RegistroComponent } from './pages/auth/registro/registro.component';
+RegistroComponent
 
 
 
 export const routes: Routes = [
-  {path:"", redirectTo:"/home", pathMatch:"full"},
   {path: "home", component:HomeComponent},
+  {path:"", redirectTo:"/home", pathMatch:"full"},
+
   {path:"panel-control", component:DashboardComponent,
     children:[
       {path:'operaciones', component: OperacionesComponent},
@@ -25,9 +27,12 @@ export const routes: Routes = [
     ]
   },
   {path:"iniciar-sesion", component:IniciarSesionComponent},
+
   {path:"registro", component:RegistroComponent},
+
   {path:"quienes-somos", component:QuienesSomosComponent},
   {path:"quienes-somos/:id", component:ProfesionalComponent},
+
   {path:"servicios", component:ServiciosComponent},
   {path: '**', component: Pagina404Component}
 ];

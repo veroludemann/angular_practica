@@ -6,6 +6,11 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+import { RegistroComponent } from './pages/auth/registro/registro.component';
+import { IniciarSesionComponent } from './pages/auth/iniciar-sesion/iniciar-sesion.component';
+
+
+
 @Component({
   selector: 'app-root',
   standalone: true,

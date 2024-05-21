@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { QuienesSomosService } from '../servicios/quienes-somos.service';
+import { QuienesSomosService } from '../../services/quienes-somos.service';
 
 
 
@@ -16,7 +16,14 @@ export class QuienesSomosComponent {
   profesionalList:any;
 
   constructor(private QuienesSomosService:QuienesSomosService){
-    this.profesionalList=QuienesSomosService.obtenerProfesionales();
+    this.profesionalList=QuienesSomosService.obtenerProfesionales().subscribe({
+      next:(profesionalList) => {
+        this.profesionalList=profesionalList;
+      },
+      error: (error) =>{
+        console.error(error)
+      }
+    });
   }
 
 
